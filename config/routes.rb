@@ -56,7 +56,7 @@ Isengard::Application.routes.draw do
         get :resend
         post :confirm
       end
-      # resources :reservations
+      resources :reservations
       resources :invitations
     end
   end

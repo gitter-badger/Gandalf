@@ -16,27 +16,41 @@
 
 
 
-<% if false # TODO for advanced tickets %>
-<div class="row">
-  <div class="col-sm-6">
-    <h2>Sent Invitations</h2>
-    <div class="table-responsive">
-      <table class="table" id="invitations">
-        <tbody>
-          <%= render @partner.sent_invitations %>
-        </tbody>
-      </table>
+<% if @partner.reservations.any? %>
+  <h2>Pending Reservations</h2>
+
+  <p>You have pending reservations. Please use below view to either send them as invitations, or pass them to your partners for further distribution.<p/>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Sent Invitations</h2>
+      <div class="table-responsive">
+        <table class="table" id="invitations">
+          <tbody>
+            <%= render @partner.sent_invitations %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h2>Reservations Left</h2>
+      <div class="table-responsive">
+        <table class="table" id="received-reservations">
+          <tbody>
+            <%= render @partner.received_reservations %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h2>Distribute Reservations</h2>
+      <div class="table-responsive">
+        <table class="table" id="sent-reservations">
+          <tbody>
+            <%= render @partner.send_reservations %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <h2>Reservations Left</h2>
-    <div class="table-responsive">
-      <table class="table" id="reservations">
-        <tbody>
-          <%= render @partner.reservations %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 <% end %>

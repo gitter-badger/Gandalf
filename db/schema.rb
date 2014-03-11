@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310202911) do
+ActiveRecord::Schema.define(version: 20140311131426) do
 
   create_table "access_levels", force: true do |t|
     t.string   "name"
@@ -180,17 +180,19 @@ ActiveRecord::Schema.define(version: 20140310202911) do
   add_index "registrations", ["payment_code"], name: "index_registrations_on_payment_code", unique: true
 
   create_table "reservations", force: true do |t|
-    t.integer  "partner_id"
+    t.integer  "invitee_id"
     t.integer  "access_level_id"
     t.integer  "price"
     t.integer  "paid"
     t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "inviter_id"
   end
 
   add_index "reservations", ["access_level_id"], name: "index_reservations_on_access_level_id"
-  add_index "reservations", ["partner_id"], name: "index_reservations_on_partner_id"
+  add_index "reservations", ["invitee_id"], name: "index_reservations_on_invitee_id"
+  add_index "reservations", ["inviter_id"], name: "index_reservations_on_inviter_id"
 
   create_table "users", force: true do |t|
     t.string   "username",            default: "", null: false

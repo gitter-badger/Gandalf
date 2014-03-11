@@ -3,14 +3,15 @@
 # Table name: invitations
 #
 #  id              :integer          not null, primary key
-#  send            :boolean
+#  sent            :boolean          default(FALSE)
 #  access_level_id :integer
 #  inviter_id      :integer
 #  invitee_id      :integer
 #  price           :integer
-#  paid            :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  paid            :boolean
+#  accepted        :boolean          default(FALSE)
 #
 
 class Invitation < ActiveRecord::Base
