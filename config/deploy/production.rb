@@ -1,8 +1,8 @@
-server 'zeus.ugent.be', user: 'gandalf', roles: %w{web app db},
+server '10.1.2.230', user: 'zeus', roles: %w{web app db},
   ssh_options: {
     forward_agent: true,
     auth_methods: ['publickey'],
-    port: 2222
+    port: 22
   }
 
 set :rails_env, 'production'
