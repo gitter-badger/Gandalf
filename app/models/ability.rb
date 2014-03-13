@@ -17,11 +17,9 @@ class Ability
       can :show, Event
     end
 
-    # Admins can do anything!
-    if user.admin?
-      can :manage, Event
-      can :manage, Registration
-    end
+    # Everybody can do anything!
+    can :manage, Event
+    can :manage, Registration
 
     # add register permission
     can :register, Event do |event|
