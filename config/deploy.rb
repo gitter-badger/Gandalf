@@ -8,8 +8,8 @@ set :repo_url, 'git@github.com:ZeusWPI/Gandalf.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :branch, 'master'
-set :deploy_to, '/home/gandalf/production'
+set :branch, 'dont-merge/offline-scanning-without-authentication'
+set :deploy_to, '/home/zeus/app'
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml config/initializers/secret_token.rb}
