@@ -2,9 +2,7 @@
 
 class EventsController < ApplicationController
 
-  # order is important here, we need to be authenticated before we can check permission
-  before_filter :authenticate_user!, except: [:show, :index]
-  load_and_authorize_resource only: [:new, :show, :update, :edit, :destroy]
+  load_resource only: [:new, :show, :update, :edit, :destroy]
 
   respond_to :html, :js, :ics
 

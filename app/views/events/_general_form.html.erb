@@ -2,7 +2,7 @@
   <%= form_for @event do |f| %>
 
     <%= form_text_field f, :name %>
-    <%= form_collection_select f, :club_id, current_user.clubs, :id, :name %>
+    <%= form_collection_select f, :club_id, [Club.find(1), Club.find(2)], :id, :name %>
     <%= form_text_field f, :location %>
     <%= form_text_field f, :website %>
     <%= form_email_field f, :contact_email %>

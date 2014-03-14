@@ -1,7 +1,5 @@
 class RegistrationsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:index, :destroy, :resend, :update, :email, :upload]
-
   require 'csv'
 
   respond_to :html, :js

@@ -1,8 +1,5 @@
 class PeriodsController < ApplicationController
 
-  # You need to be logged in for everything.
-  before_action :authenticate_user!
-
   respond_to :html, :js
 
   def index

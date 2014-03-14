@@ -1,8 +1,4 @@
 class ZonesController < ApplicationController
-
-  # You need to be logged in for everything.
-  before_action :authenticate_user!, except: :show
-
   respond_to :html, :js
 
   def index
