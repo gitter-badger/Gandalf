@@ -31,6 +31,7 @@ class Event < ActiveRecord::Base
   belongs_to :club
 
   has_many :access_levels, dependent: :destroy
+  has_many :partners, dependent: :destroy
   has_many :zones, dependent: :destroy
   has_many :registrations, dependent: :destroy
 
@@ -44,6 +45,7 @@ class Event < ActiveRecord::Base
   validates :club, presence: true
   validates :start_date, presence: true
 
+  validates :contact_email, email: true
   validates_with IBANValidator
 
   has_attached_file :export
